@@ -7,6 +7,11 @@
 * {
   margin: 0;
   padding: 0;
+  /* 
+    Very important! If this is not included, sometimes when you draw it tries
+    to highlight a div which causes the mouse events to not be correctly detected. 
+  */
+  user-select: none;
 }
 
 .container {
@@ -35,4 +40,20 @@
   display: block;
   padding-top: 100%;
   float: left;
+}
+
+.options {
+  display: flex;
+  text-align: center;
+  gap: 2rem;
+}
+
+.color-picker {
+  display: flex;
+  flex-direction: column;
+}
+
+.range-picker {
+  display: flex;
+  flex-direction: column;
 }

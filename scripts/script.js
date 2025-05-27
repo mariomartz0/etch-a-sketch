@@ -4,11 +4,15 @@ let tileColor = "black";
 createGrid(gridSize);
 
 // Listener to draw on grid
+let isDrawable = false;
 const grid = document.querySelector(".grid");
+document.body.addEventListener("mousedown", () => (isDrawable = true));
+document.body.addEventListener("mouseup", () => (isDrawable = false));
+
 grid.addEventListener("mouseover", (event) => {
   let target = event.target;
 
-  if (target.classList[0] === "col") {
+  if (target.classList[0] === "col" && isDrawable) {
     target.style.backgroundColor = tileColor;
   }
 });
